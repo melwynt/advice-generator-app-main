@@ -16,9 +16,15 @@
   --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.06);
 
   --line: 1px solid var(--color-grey-light-2);
+
+  --color-bg: rgba(32, 38, 50, 1);
+  --color-card: rgba(49, 58, 73, 1);
+  --color-title: rgba(107, 241, 188, 1);
+  --color-advice: rgba(216, 233, 243, 1);
+  --color-dice: rgba(83, 255, 168, 1);
 }
 
-$color-bg: var(--color-grey-light-4);
+$color-bg: var(--color-bg);
 
 * {
   margin: 0;
@@ -37,11 +43,18 @@ html {
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 1.4rem;
-  font-weight: 400;
-  line-height: 1.6;
-  color: var(--color-grey-dark-1);
+  font-family: 'Manrope', sans-serif;
+  // font-size: 1.4rem;
+  // font-weight: 400;
+  // line-height: 1.6;
+  // color: var(--color-grey-dark-1);
 
+  // min-height: 100vh;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   min-height: 100vh;
 }

@@ -1,7 +1,7 @@
 {
-  "name": "html-sass-boilerplate",
+  "name": "advice-generator-app",
   "version": "1.0.1",
-  "description": "Simple HTML SASS Boilerplate with Parcel",
+  "description": "Advice generator app using the Advice Slip API",
   "scripts": {
     "start": "rm -rf public/* && parcel src/index.html --dist-dir public --port 1234 --hmr-port 4326 --host localhost --open",
     "build": "rm -rf public/* && parcel build src/index.html --dist-dir public"
