@@ -25,6 +25,14 @@
     margin-top: 2.7rem;
     letter-spacing: -0.02rem;
     color: var(--color-advice);
+
+    &::before {
+      content: '“';
+    }
+
+    &::after {
+      content: '”';
+    }
   }
 
   &__divider-desktop {
