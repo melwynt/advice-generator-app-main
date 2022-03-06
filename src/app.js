@@ -32,11 +32,7 @@ const App = () => {
           and taking action.
           {/* {advice ? advice.advice : ''} */}
         </div>
-        <img
-          // src={require('../images/pattern-divider-desktop.svg')}
-          alt="divider"
-          className="card__divider"
-        />
+        <img alt="divider" className="card__divider" />
         <div className="card__icon-container">
           <img
             src={require('../images/icon-dice.svg')}

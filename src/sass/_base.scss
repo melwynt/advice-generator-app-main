@@ -62,7 +62,7 @@ main {
   justify-content: center;
   min-height: 100vh;
 
-  @media only screen and (max-width: $bp-small-2) {
+  @media only screen and (max-width: $bp-medium) {
     display: block;
     padding: 15rem 1.6rem 0rem 1.6rem;
   }
