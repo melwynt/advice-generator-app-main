@@ -1,14 +1,26 @@
+@use 'base';
+
 .card {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 54rem;
-  height: 33.2rem;
+  max-width: 54rem;
+  // min-height: 33.2rem;
   background-color: var(--color-card);
   border-radius: 1.5rem;
   padding: 0rem 4rem 0rem 4rem;
   margin-top: -3rem;
+
+  @media only screen and (max-width: base.$bp-medium) {
+    padding: 0rem 2.5rem 0rem 2.5rem;
+    border-radius: 0;
+    margin-top: -3rem;
+  }
+
+  @media only screen and (max-width: base.$bp-small-2) {
+    border-radius: 1rem;
+  }
 
   &__title {
     font-size: 1.3rem;
@@ -16,6 +28,12 @@
     margin-top: 5rem;
     letter-spacing: 0.4rem;
     color: var(--color-title);
+
+    @media only screen and (max-width: base.$bp-small-2) {
+      font-size: 1rem;
+      line-height: 1rem;
+      margin-top: 4.3rem;
+    }
   }
 
   &__advice {
@@ -28,15 +46,36 @@
 
     &::before {
       content: '“';
+      font-size: inherit;
+      line-height: inherit;
     }
 
     &::after {
       content: '”';
+      font-size: inherit;
+      line-height: inherit;
+    }
+
+    @media only screen and (max-width: base.$bp-small-2) {
+      font-size: 2.4rem;
+      line-height: 3.3rem;
+      margin-top: 2.6rem;
     }
   }
 
-  &__divider-desktop {
+  &__divider {
     margin-top: 4rem;
+    margin-bottom: 7.2rem;
+    content: url('../../images/pattern-divider-desktop.svg');
+
+    @media only screen and (max-width: base.$bp-small-1) {
+      content: url('../../images/pattern-divider-mobile.svg');
+    }
+
+    @media only screen and (max-width: base.$bp-small-2) {
+      margin-top: 2.4rem;
+      margin-bottom: 6.4rem;
+    }
   }
 
   &__icon-container {
@@ -50,11 +89,15 @@
     background-color: var(--color-dice);
 
     bottom: -3.3rem;
-    left: 23.7rem;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
 
-    text-align: center;
-
-    // &__icon-dice {
-    // }
+    @media only screen and (max-width: base.$bp-small-2) {
+      width: 6.5rem;
+      height: 6.5rem;
+      bottom: -3.25rem;
+    }
   }
 }

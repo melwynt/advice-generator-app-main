@@ -28,14 +28,14 @@ const App = () => {
       <div className="card">
         <h1 className="card__title">ADVICE #{advice ? advice.id : ''}</h1>
         <div className="card__advice">
-          “It is easy to sit up and take notice, what's difficult is getting up
-          and taking action.”
+          It is easy to sit up and take notice, what's difficult is getting up
+          and taking action.
           {/* {advice ? advice.advice : ''} */}
         </div>
         <img
-          src={require('../images/pattern-divider-desktop.svg')}
-          alt="pattern divider desktop"
-          className="card__divider-desktop"
+          // src={require('../images/pattern-divider-desktop.svg')}
+          alt="divider"
+          className="card__divider"
         />
         <div className="card__icon-container">
           <img
