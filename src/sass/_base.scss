@@ -26,6 +26,10 @@
 
 $color-bg: var(--color-bg);
 
+$bp-medium: 33.75em; // 540px (1em = 16px)
+$bp-small-1: 29.125em; // 466px (1em = 16px)
+$bp-small-2: 23.4375em; // 375px (1em = 16px)
+
 * {
   margin: 0;
   padding: 0;
@@ -57,4 +61,9 @@ main {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+
+  @media only screen and (max-width: $bp-small-2) {
+    display: block;
+    padding: 15rem 1.6rem 0rem 1.6rem;
+  }
 }
