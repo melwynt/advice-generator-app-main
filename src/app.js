@@ -1,22 +1,15 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const App = () => {
   const [advice, setAdvice] = useState(null);
 
   const getData = async () => {
-    fetch('https://api.adviceslip.com/advice/117')
-      .then((res) => {
-        if (res.ok) {
-          console.log(res);
-          return res.json();
-        } else {
-          console.log('Not successful');
-        }
-      })
-      .then((res) => {
-        console.log(res);
-        setAdvice(res.slip);
-      });
+    const url = 'https://api.adviceslip.com/advice';
+
+    const data = await axios.get(`${url}?timestamp=${new Date().getTime()}`);
+
+    setAdvice(data.data.slip);
   };
 
   useEffect(() => {
@@ -26,14 +19,15 @@ const App = () => {
   return (
     <main>
       <div className="card">
-        <h1 className="card__title">ADVICE #{advice ? advice.id : ''}</h1>
-        <div className="card__advice">
-          It is easy to sit up and take notice, what's difficult is getting up
-          and taking action.
-          {/* {advice ? advice.advice : ''} */}
-        </div>
+        <h1 className="card__title">ADVICE #{advice && advice.id}</h1>
+        <div className="card__advice">{advice && advice.advice}</div>
         <img alt="divider" className="card__divider" />
-        <div className="card__icon-container">
+        <div
+          className="card__icon-container"
+          onClick={() => {
+            getData();
+          }}
+        >
           <img
             src={require('../images/icon-dice.svg')}
             width="24px"
