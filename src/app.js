@@ -13,7 +13,11 @@ const App = () => {
   };
 
   useEffect(() => {
-    getData();
+    // getData();
+    setAdvice({
+      id: '117',
+      advice: `It is easy to sit up and take notice, what's difficult is getting up and taking actions.`,
+    });
   }, []);
 
   return (
