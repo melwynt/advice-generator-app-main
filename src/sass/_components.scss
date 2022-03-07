@@ -97,5 +97,12 @@
       height: 6.5rem;
       bottom: -3.25rem;
     }
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0 0 2rem 0.4rem rgba(83, 255, 168, 0.3),
+        0 0 4rem 0.6rem rgba(83, 255, 168, 0.25),
+        0 0 5rem 0.8rem rgba(83, 255, 168, 0.15);
+    }
   }
 }
