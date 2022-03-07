@@ -1,80 +1,97 @@
-## Description
+# Frontend Mentor - Advice generator app solution
 
-This is a simple React and SASS Boilerplate with Parcel bundler:
+This is a solution to the [Advice generator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/advice-generator-app-QdUG-13db). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-- [parceljs](https://parceljs.org/)
-- react
-- react-dom
-- sass
+## Table of contents
 
-Node version in use:<br>
-`v16.13.0`
+- [Frontend Mentor - Advice generator app solution](#frontend-mentor---advice-generator-app-solution)
+  - [Table of contents](#table-of-contents)
+  - [Overview](#overview)
+    - [The challenge](#the-challenge)
+    - [Screenshot](#screenshot)
+    - [Links](#links)
+  - [My process](#my-process)
+    - [Built with](#built-with)
+    - [What I learned](#what-i-learned)
+    - [Useful resources](#useful-resources)
+  - [Author](#author)
 
-Run `npm install` locally to install all required modules.
+## Overview
 
-Run `npm run start` to start the live server locally.
+### The challenge
 
-Please give this repo a ⭐ if you found it useful! Thanks
+Users should be able to:
 
-## Why should you use this boilerplate?
+- View the optimal layout for the app depending on their device's screen size
+- See hover states for all interactive elements on the page
+- Generate a new piece of advice by clicking the dice icon
 
-Parcel is fast!<br>
+### Screenshot
 
-And this boilerplate makes it super easy to get you up and running.
+![](./screenshot.png)
 
-## Things I've added to get you up and running
+### Links
 
-In the `index.html` file, I've added the bare minimum.<br>
+- Solution URL: [github.com/melwynt/advice-generator-app-main](https://github.com/melwynt/advice-generator-app-main)
+- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
-In `index.js` and `app.js`, you can replace the code with your React app.<br>
+## My process
 
-The code below will only apply in development.<br>
+### Built with
 
-> Hot Module Replacement (HMR) improves the development experience by automatically updating modules in the browser at runtime without needing a whole page refresh. This means that application state can be retained as you change small things.
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- Mobile-first workflow
+- [React](https://reactjs.org/) - JS library
+- SASS/SCSS
+-
 
-```javascript
-if (module.hot) {
-  module.hot.accept();
+### What I learned
+
+The bigest challenge here was to retrieve a new advice on each new click on the dice.<br>
+At first `fetch` or `axios` were not getting a new advice even though I was triggering a new request to the API url.<br>
+This was due to `fetch` and `axios` caching data.<br>
+To overcome this issue, the solution was to add a timestamp in the URL:<br>
+
+```js
+const getData = async () => {
+  const url = 'https://api.adviceslip.com/advice';
+
+  const data = await axios.get(`${url}?timestamp=${new Date().getTime()}`);
+
+  setAdvice(data.data.slip);
+};
+```
+
+I also like this piece of CSS code to get a new image based on the screen size:<br>
+
+```css
+@media only screen and (max-width: base.$bp-small-1) {
+  content: url('../../images/pattern-divider-mobile.svg');
 }
 ```
 
-## HMR (Hot Module Replacement)
+The glow around the dice when hovering the element was also pretty fun to create.
 
-You might have noticed in `package.json` this line:
+### Useful resources
 
-```
-"start": "rm -rf public/* && parcel src/index.html --dist-dir public --port 1234 --hmr-port 4326 --host localhost --open"
-```
+For this project I used this boilerplate which is saving me tons of time:<br>
 
-Normally it would be enough to just enter:
+- [github.com/melwynt/react-html-sass-boilerplate](https://github.com/melwynt/react-html-sass-boilerplate)
 
-```
-"start": "parcel src/index.html"
-```
+It's a simple React and SASS Boilerplate with Parcel bundler.
 
-HMR might fail on some machines hence the need to specify `--port`, `--hmr-port` and `--host`.
+- [Pixel Perfect Pro](https://addons.mozilla.org/en-US/firefox/addon/pixel-perfect-pro/) - This helped me to display a screenshot on top of the webpage to easily check if dimensions were accurate. This is super useful is you need to create pixel perfect work.
+- [PX: Viewport Dimensions](https://addons.mozilla.org/en-US/firefox/addon/px-viewport-dimensions/) - This add-on will show you the dimensions of your viewport while resizing your browser.
 
-Source: [https://github.com/parcel-bundler/parcel/issues/6334#issuecomment-868853192](https://github.com/parcel-bundler/parcel/issues/6334#issuecomment-868853192)
+Other tools:
 
-```
-rm -rf public/*
-```
+- [Gimp](https://www.gimp.org/) - This helped me resize screenshots provided in the project
+- [Figma](https://www.figma.com) - This helped me create a rapid mockup to get dimensions of components.
 
-Each time we are running `npm run start`, we delete all the files inside the `public` folder to avoid stale files.
+## Author
 
-## Fork
-
-You should fork this repo if you would like to use it.
-
-If you decide to clone this repo, don't forget to change your Git remote URL:<br>
-Here's a quick [How-To](https://devconnected.com/how-to-change-git-remote-origin/) guide.
-
-```
-git remote set-url origin <your-remote_url>
-git remote -v
-```
-
-## Contact
-
+🚀 Frontend Mentor - [@melwynt](https://www.frontendmentor.io/profile/melwynt)
 🐦 Twitter: [@melwyncode](https://twitter.com/melwyncode)<br>
 🧑‍💻 LinkedIn: [melwynturbant](https://www.linkedin.com/in/melwynturbant)
