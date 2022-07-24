@@ -1,0 +1,45 @@
+:root {
+  --color-bg: rgba(32, 38, 50, 1);
+  --color-card: rgba(49, 58, 73, 1);
+  --color-title: rgba(107, 241, 188, 1);
+  --color-advice: rgba(216, 233, 243, 1);
+  --color-dice: rgba(83, 255, 168, 1);
+}
+
+$color-bg: var(--color-bg);
+
+$bp-medium: 33.75em; // 540px (1em = 16px)
+$bp-small-1: 29.125em; // 466px (1em = 16px)
+$bp-small-2: 23.4375em; // 375px (1em = 16px)
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; // 1rem = 10px, 10px/16px = 62.5%
+}
+
+body {
+  font-family: 'Manrope', sans-serif;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+
+  @media only screen and (max-width: $bp-medium) {
+    display: block;
+    padding: 15rem 1.6rem 0rem 1.6rem;
+  }
+}
